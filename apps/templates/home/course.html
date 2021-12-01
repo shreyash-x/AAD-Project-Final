@@ -1,0 +1,155 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Course Plan {% endblock %}
+
+{% block body_class %} course-plan {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+
+{% include 'includes/navigation.html' %}
+
+<header>
+    <div class="page-header min-height-400" style="background-image: url('/static/assets/img/bg5.jpg');" loading="lazy">
+        <span class="mask bg-gradient-dark opacity-8"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 text-center mx-auto">
+                    <h1 class="text-white pt-3 mt-n5">Course Plan</h1>
+                    <p class="lead text-white mt-3">Navigate through the lessons via the map given below.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4 p-0">
+    <section class="py-sm-3 py-3 position-relative">
+        <section id="introduction" class="py-7 px-5">
+            <img src="../../static/assets/img/map1.png" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="" alt="Divide &amp; Conquer" title="Divide &amp; Conquer" href="#DNC" coords="171,478,104"
+                    shape="circle" onclick="dnc()">
+                <area target="" alt="Greedy Algorithms" title="Greedy Algorithms" href="#GA" coords="672,478,107"
+                    shape="circle" onclick="ga()">
+                <area target="" alt="Dynamic Programming" title="Dynamic Programming" href="#DP" coords="1170,479,106"
+                    shape="circle" onclick="dp()">
+                <area target="" alt="Introduction to Algorithmic thinking" title="Introduction to Algorithmic thinking"
+                    href="/courses/intro-to-algorithmic-thinking" coords="673,139,110" shape="circle">
+            </map>
+        </section>
+        <section id="DNC" class="py-7 px-5 my-5" style="display: none;">
+            <button type="button" class="btn btn-outline-dark mb-0" onclick="dnc()">
+                <i class="fas fa-arrow-circle-left"></i>
+                Return</button>
+            <img src="../../static/assets/img/map2.png" usemap="#image-map2">
+
+            <map name="image-map2">
+                <area target="" alt="" title="" href="/courses/master-theorem" coords="338,91,91" shape="circle">
+                <area target="" alt="" title="" href="/courses/fft-algo" coords="156,340,93" shape="circle">
+                <area target="" alt="" title="" href="/courses/finding-med" coords="476,558,91" shape="circle">
+                <area target="" alt="" title="" href="/courses/karatsuba-algo" coords="873,558,91" shape="circle">
+                <area target="" alt="" title="" href="/courses/strassen-algo" coords="1191,341,90" shape="circle">
+                <area target="" alt="" title="" href="/courses/closest-pair-of-points" coords="1011,92,90"
+                    shape="circle">
+                <area target="" alt="" title="" href="/courses/merge-sort" coords="675,92,91" shape="circle">
+                <area target="" alt="" title="" href="/courses/divide-n-conquer" coords="675,326,106" shape="circle">
+            </map>
+        </section>
+        <section id="GA" class="py-7 px-5 my-5" style="display: none;">
+            <button type="button" class="btn btn-outline-dark mb-0" onclick="ga()">
+                <i class="fas fa-arrow-circle-left"></i>
+                Return</button>
+            <img src="../../static/assets/img/map3.png" usemap="#image-map3">
+
+            <map name="image-map3">
+                <area target="" alt="activity-selection" title="activity-selection" href="/courses/activity-selection"
+                    coords="674,92,93" shape="circle">
+                <area target="" alt="greedy-algorithms" title="greedy-algorithms" href="/courses/greedy-algorithms"
+                    coords="677,321,111" shape="circle">
+                <area target="" alt="mst" title="mst" href="/courses/mst" coords="1170,218,91" shape="circle">
+                <area target="" alt="huffmann-codes" title="huffmann-codes" href="/courses/huffman-codes"
+                    coords="873,557,92" shape="circle">
+                <area target="" alt="dijkstra-algorithm" title="dijkstra-algorithm" href="/courses/dijkstra-algorithm"
+                    coords="478,561,91" shape="circle">
+                <area target="" alt="set-cover" title="set-cover" href="/courses/set-cover" coords="170,236,94"
+                    shape="circle">
+            </map>
+        </section>
+        <section id="DP" class="py-7 px-5 my-5" style="display: none;">
+            <button type="button" class="btn btn-outline-dark mb-0" onclick="dp()">
+                <i class="fas fa-arrow-circle-left"></i>
+                Return</button>
+            <img src="../../static/assets/img/map4.png" usemap="#image-map4">
+
+            <map name="image-map4">
+                <area target="" alt="dynamic-programming" title="dynamic-programming"
+                    href="/courses/dynamic-programming" coords="675,326,106" shape="circle">
+                <area target="" alt="knapsack-problem" title="knapsack-problem" href="/courses/knapsack-problem"
+                    coords="677,92,90" shape="circle">
+                <area target="" alt="shortest-path-dag" title="shortest-path-dag" href="/courses/shortest-path-dag"
+                    coords="1012,92,90" shape="circle">
+                <area target="" alt="edit-distance" title="edit-distance" href="/courses/edit-distance"
+                    coords="1194,341,92" shape="circle">
+                <area target="" alt="longest-increasing-subsequence" title="longest-increasing-subsequence"
+                    href="/courses/longest-increasing-subsequence" coords="872,558,90" shape="circle">
+                <area target="" alt="floyd-warshall-algorithm" title="floyd-warshall-algorithm"
+                    href="/courses/floyd-warshall-algorithm" coords="479,559,92" shape="circle">
+                <area target="" alt="dp-optimization" title="dp-optimization" href="/courses/dp-optimization"
+                    coords="158,340,90" shape="circle">
+                <area target="" alt="bellman-ford" title="bellman-ford" href="/courses/bellman-ford" coords="344,91,91"
+                    shape="circle">
+            </map>
+        </section>
+    </section>
+
+</div>
+
+{% endblock content %}
+{% block javascripts %}
+<script>
+    function dnc() {
+        var x = document.getElementById("DNC");
+        var y = document.getElementById("introduction");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+        } else {
+            x.style.display = "none";
+            y.style.display = "block";
+        }
+    }
+    function ga() {
+        var x = document.getElementById("GA");
+        var y = document.getElementById("introduction");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+        } else {
+            x.style.display = "none";
+            y.style.display = "block";
+        }
+    }
+    function dp() {
+        var x = document.getElementById("DP");
+        var y = document.getElementById("introduction");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+        } else {
+            x.style.display = "none";
+            y.style.display = "block";
+        }
+    }
+</script>
+{% endblock javascripts %}

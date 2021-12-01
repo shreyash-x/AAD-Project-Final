@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Course Plan {% endblock %}
+
+{% block body_class %} course-plan {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+
+{% include 'includes/navigation.html' %}
+
+<header class="header-2">
+  <div class="page-header min-vh-75 relative" style="background-image: url('/static/assets/img/bg10.jpg')">
+    <span class="mask bg-gradient-dark opacity-4"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 text-center mx-auto">
+          <h1 class="text-white pt-3 mt-n5">AlgoBook</h1>
+          <p class="lead text-white mt-3">Simple and effective way to learn Algorithms<br /> Part of my AAD course
+            project</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+
+  <div class="container py-7">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-center">Welcome Aboard!</h2>
+        <p class="lead text-center">I will be taking you through some important algorithms and help you understand
+          them in a better way by giving you sample problems throughtout the course.<br>
+          This website is part of my <strong>Algorithms Analysis and Design</strong> Course.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-center">What is AlgoBook?</h2>
+        <p class="lead text-center">AlgoBook is a simple and effective way to learn Algorithms. It is a website
+          that will help you understand the algorithms in a better way. It will also teach you how to approach and
+          solve the problems throughtout the course.</p>
+      </div>
+
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="text-center">Lets Begin!!</h2>
+        <p class="lead text-center">Without further ado, lets go ahead and take a look into this project.</p>
+        <a href="/course.html"><button class="btn btn-outline-success btn-lg btn-block">Let's
+            Go!</button>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+{% block javascripts %}
+{% endblock javascripts %}
